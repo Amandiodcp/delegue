@@ -1,0 +1,28 @@
+using System;
+
+delegate void ShowMoney(decimal amount);
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        decimal amount = 100.50m;
+
+        ShowMoney showMoneyDelegate = DisplayAmountInEuro;
+        showMoneyDelegate += DisplayAmountInDollars;
+
+        showMoneyDelegate(amount);
+
+        Console.ReadLine();
+    }
+
+    static void DisplayAmountInEuro(decimal amount)
+    {
+        Console.WriteLine("Montant en euros: €" + amount);
+    }
+
+    static void DisplayAmountInDollars(decimal amount)
+    {
+        Console.WriteLine("En dollar: $$" + montant);
+    }
+}
